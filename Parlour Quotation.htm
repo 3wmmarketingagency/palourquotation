@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPLIFTR Quotation - Premium Design</title>
+    <style>
+        /* --- GLOBAL STYLES --- */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1f2b3e 0%, #2f3c54 100%);
+            -webkit-print-color-adjust: exact;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .container {
+            width: 900px;
+            max-width: 100%;
+            padding: 15px 15px 30px 15px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            margin: 5px auto;
+        }
+
+        /* --- HEADER & LOGO --- */
+        header {
+            text-align: center;
+            margin: 0 0 15px 0;
+            padding: 0;
+        }
+
+        .logo-img {
+            display: block;
+            margin: 0 auto;
+            width: 220px;
+            height: auto;
+        }
+
+        .subtitle {
+            color: #6c757d;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 4px;
+            margin-bottom: 0;
+        }
+
+        .doc-title {
+            text-align: center;
+            color: #1e2c3a;
+            margin: 15px 0 25px 0;
+            font-size: 22px;
+            font-weight: 600;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        /* --- PLANS LAYOUT --- */
+        .plans-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .plan-box {
+            flex: 1;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .plan-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        .plan-header {
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        .plan-title {
+            font-size: 20px;
+            color: #1e2c3a;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .price {
+            font-size: 22px;
+            color: #28a745;
+            font-weight: 700;
+        }
+
+        /* PREMIUM STYLING */
+        .premium {
+            border: 3px solid #007bff;
+            background: linear-gradient(145deg, #e7f5ff 0%, #ffffff 100%);
+        }
+        .premium .plan-title {
+            color: #007bff;
+        }
+        .premium .price {
+            color: #007bff;
+        }
+        .premium .premium-badge {
+            display: inline-block;
+            background-color: #ffc107;
+            color: #333;
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* --- FEATURES LIST --- */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            padding: 8px 0;
+            font-size: 15px;
+            color: #333;
+            border-bottom: 1px dashed #f0f0f0;
+            display: flex;
+            align-items: center;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        .plan-box ul li::before {
+            content: '✓';
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 8px;
+            font-size: 16px;
+        }
+        .premium ul li::before {
+            content: '★';
+            color: #ffc107;
+        }
+
+        /* --- NOTES & CHARGES --- */
+        .charges-note-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .extra-charge {
+            text-align: center;
+            color: #dc3545;
+            font-style: italic;
+            font-size: 15px;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .blink {
+            animation: blinkAnim 1.2s infinite ease-in-out;
+        }
+        @keyframes blinkAnim {
+            0% { opacity: 1; }
+            50% { opacity: 0.25; }
+            100% { opacity: 1; }
+        }
+
+        .note {
+            padding: 12px;
+            background-color: #ffeaea;
+            border-left: 5px solid #dc3545;
+            font-size: 13px;
+            color: #8c0000;
+            border-radius: 5px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            margin-top: 15px;
+            text-align: center;
+            color: #1e2c3a;
+            font-size: 13px;
+            border-top: 1px solid #ccc;
+            padding-top: 15px;
+        }
+        .contact-row {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #495057;
+        }
+        .contact-row span {
+            font-weight: 600;
+            color: #007bff;
+        }
+
+        /* --- MOBILE RESPONSIVE --- */
+        @media (max-width: 768px) {
+            body {
+                align-items: stretch;
+            }
+
+            .container {
+                width: 100%;
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+                padding: 10px 10px 20px 10px;
+            }
+
+            .logo-img {
+                width: 190px;
+            }
+
+            .subtitle {
+                font-size: 12px;
+                letter-spacing: 1.5px;
+            }
+
+            .doc-title {
+                font-size: 20px;
+                margin: 12px 0 18px 0;
+                padding-bottom: 8px;
+            }
+
+            .plans-grid {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .plan-box {
+                padding: 15px;
+            }
+
+            .plan-title {
+                font-size: 18px;
+            }
+
+            .price {
+                font-size: 20px;
+            }
+
+            li {
+                font-size: 14px;
+                padding: 6px 0;
+            }
+
+            .extra-charge {
+                font-size: 14px;
+            }
+
+            .note {
+                font-size: 12px;
+            }
+
+            footer {
+                font-size: 12px;
+                padding-top: 12px;
+            }
+            .contact-row {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-img {
+                width: 170px;
+            }
+            .doc-title {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://image2url.com/images/1765100321849-5ebab694-08cb-46fc-811c-ad71e69b8037.png" alt="UPLIFTR Logo" class="logo-img">
+            <div class="subtitle">DIGITAL GROWTH & BRANDING AGENCY</div>
+        </header>
+
+        <h2 class="doc-title">SOCIAL MEDIA MARKETING QUOTATION</h2>
+
+        <div class="plans-grid">
+            <div class="plan-box">
+                <div class="plan-header">
+                    <div class="plan-title">Starter Growth Plan</div>
+                    <div class="price">₹5,000 / Month</div>
+                </div>
+                <ul>
+                    <li>5 Professional Reels / Posts</li>
+                    <li>Client-side shoot (raw content provided by client)</li>
+                    <li>Professional Editing & Posting</li>
+                    <li>Strategic Captions & Hashtag Research</li>
+                </ul>
+            </div>
+
+            <div class="plan-box premium">
+                <div class="plan-header">
+                    <div class="premium-badge">PREMIUM</div>
+                    <div class="plan-title">Premium Brand Growth Plan</div>
+                    <div class="price">₹15,000 / Month</div>
+                </div>
+                <ul>
+                    <li>8–10 Reels / Posts</li>
+                    <li>1 Professional Shoot per month</li>
+                    <li>Posting on Instagram, Facebook & YouTube</li>
+                    <li>3–4 Stories per month</li>
+                    <li>Content Calendar (Planning & Strategy)</li>
+                    <li>Monthly Performance Report</li>
+                    <li>5 GMB Reviews Per Month</li>
+                    <li>Google My Business SEO Included</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="charges-note-section">
+            <div class="extra-charge">Extra Charges: ₹700 per extra reel</div>
+
+            <div class="note blink">
+                <strong>IMPORTANT:</strong> Minimum 3-month contract is mandatory for the ₹5,000 package to deliver quality results and show performance growth.
+            </div>
+        </div>
+
+        <footer>
+            <strong>CONTACT UPLIFTR</strong>
+            <div class="contact-row">
+                <span>📞 8291658232</span> &nbsp;|&nbsp; <span>📧 growwithupliftr@gmail.com</span>
+            </div>
+            <div class="contact-row">
+                📍 Dombivli West – 421202
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
